@@ -1,0 +1,782 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css" media="screen, projection" />
+    <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/backbone.js"></script>
+
+    <script type="text/javascript" src="js/initApp.js"></script>
+
+    <script type="text/javascript" src="js/Models/section.js"></script>
+    <script type="text/javascript" src="js/Collections/sections.js"></script>
+    <script type="text/javascript" src="js/Routers/index.js">
+    </script><script type="text/javascript" src="js/Views/sectionApp.js"></script>
+    </script><script type="text/javascript" src="js/Views/leftMenu.js"></script>
+    </script><script type="text/javascript" src="js/Views/accordionApp.js"></script>
+    </script><script type="text/javascript" src="js/Views/mainApp.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<div id="header">
+       <div class="container_content"><h1 class="content">Тестовое задание</h1></div>
+        <div class="sideBar header-left"><img height="90px"  src="" alt=""> </div>
+    </div><!-- #header-->
+
+	<div id="middle">
+
+		<div class="container_content">
+			<div class="content">
+			        <div id='general' name="Общие вопросы" class="section">
+                        <table class="table">
+                            <thead>
+                                <tr >
+                                    <th colspan="2" >
+                                        <h2 class="middle">Общие вопросы</h2>
+                                    </th>
+                                </tr>
+
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="answer">Фамилия, имя, отчество</td>
+                                <td>Воробьев Никита Александрович</td>
+                            </tr>
+                            <tr>
+                                <td>Е-mail</td>
+                                <td>voronsupermen@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Телефон</td>
+                                <td>…</td>
+                            </tr>
+                            <tr>
+                                <td>Год рождения</td>
+                                <td>1990</td>
+                            </tr>
+                            <tr>
+                                <td>Город, в котором живёте</td>
+                                <td>Москва</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Вуз, факультет, специальность, кафедра
+                                </td>
+                                <td>Моссковский Авиационный Институт,Прикладная Математика и физика,инженер-математик, математическая кибирнетика </td>
+                            </tr>
+                            <tr>
+                                <td>Год окончания вуза</td>
+                                <td>2013</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    На каком уровне владеете английским языком?
+                                </td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>Чего вы ожидаете от участия в Школе?</td>
+                                <td>Опыт</td>
+                            </tr>
+                            <tr>
+                                <td>Откуда вы о нас узнали?</td>
+                                <td>От коллеги</td>
+                            </tr>
+                            <tr>
+                                <td>Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?</td>
+                                <td>В районе 20 часов до февраля 2013 года (окончание вуза)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+                <div id='experience' name="Опыт разработки" class="section">
+                    <table class="table">
+                        <thead>
+                        <tr >
+                            <th colspan="2" >
+                                <h2 class="middle">Опыт разработки</h2>
+                            </th>
+                        </tr>
+
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="answer">
+                                Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный интерфейс, так и просто домашняя страничка.
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас личные предпочтения?
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Какие редакторы и среды разработки вы использовали? Чем обычно пользуетесь?
+                            </td>
+                            <td>…</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                С какими ОС приходилось сталкиваться? Для каких целей вы их использовали?
+                            </td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Приходилось ли вам пользоваться системами контроля версий? Если да, то какими? Какая из них вам нравится больше всего?
+                            </td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Использовали ли вы системы постановки и ведения задач?
+                            </td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Какие полезные для фронтенд-разработчика ресурсы вы используете и можете посоветовать?
+                            </td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Работали ли вы где-нибудь? Какие у вас были должностные обязанности? Есть ли опыт работы в команде?
+                            </td>
+                            <td>...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+
+
+
+
+
+                    <div id='technical' name="Технические вопросы" class="section">
+                        <div class="demo">
+
+                            <div class="accordion">
+                            <button  class="pull-right btn btn-primary js-toggle"><i class="icon-eye-close icon-white"></i></button>
+                              <h2 class="middle">Технические вопросы</h2>
+                              <h3>
+                                  <a href="#">
+                                      Вопрос №1
+                                  </a>
+                              </h3>
+                              <div>
+                                  <p>
+                                  <h4>
+                                       Перечислите известные вам инструменты и приёмы для отладки кода в разных браузерах.
+                                  </h4>
+                                  </p>
+                                  <p>
+                                    Дебагеры различных браузеров(Firefox :Firebug, IE9:  режим совместимости + Developer Tools.
+                                      Opera (версия 9.5 и выше): Opera Dragonfly
+                                      У Safari : Drosera JS и DOM viewer  WebInspector.
+                                      Покрытие кода тестами.
+                                      Автоматизированное тестирование:
+                                        Selenium - это java-программа, которая умеет запускать браузер и делать в нем различные действия типа клика на кнопку,
+                                                поиска элемента, ожидания загрузки страницы.
+
+                                  </p>
+
+                              </div>
+                              <h3>
+                                  <a href="#">
+                                      Вопрос №2
+                                  </a>
+                              </h3>
+                              <div>
+                                  <p>
+                                  <h4>
+                                         Опишите своими словами, что происходит в браузерах при клике на ссылку yandex.ru (полнота ответа — на ваше усмотрение).                              </h4>
+                                  </p>
+                                  <p>
+                                        При клике на ссылку возникает событие click, которое передается всем обработчикам на странице, порядок вызовов которых  определен моделью всплытия, что означает, что после того как они возникли для целевого элемента, они по очереди возникают для каждого предка в DOM-дереве, вплоть до объекта document включительно.
+                                      Всплытие может быть прервано и тогда событие по умолчанию переход по url не происходит. Потом браузер обрабатывает событие click которому передается элемент на котором возникло событие (тег а),в соответствии с аттрибутами ссылки(в новой вкладке или нет,например) браузер открывает новую страницу  по нужному урл.
+                                  </p>
+                              </div>
+                              <h3>
+                                  <a href="#">
+                                      Вопрос №3
+                                  </a>
+                              </h3>
+                              <div>
+                                  <p>
+                                  <h4>
+                                      Предположим, что мы представляем автосалон по продаже японских и немецких автомобилей. У нас есть базовые классы и примеры их использования. Допишите недостающий код.
+                                  </h4>
+                                  </p>
+                                  <p>
+                                       <pre>
+
+/**
+ * Создает экземпляр Машины
+ * @this {Car}
+ * @param {string} manufacturer Производитель
+ * @param {string} model Модель
+ * @param {number} year Год производство
+ */
+
+
+function Car(manufacturer, model, year) {
+
+    this.manufacturer = manufacturer.toString();
+    this.model = model.toString();
+    setYear(this,year)
+
+    function setYear(self,year){
+        var time = new Date();
+        self.year = +year? year: time.getFullYear()
+    }
+
+    this.getInfo=function(){
+       return this.toString();
+    }
+    this.getDetailedInfo = function(){
+        return " Производитель: "+this.manufacturer+".Модель: "+this.model+". Год: "+this.year;
+    }
+    this.getCountry=function() {
+    switch (this.manufacturer.toLowerCase()) {
+        case 'bmw':
+	case 'audi':
+            return 'Germany';
+
+        case 'toyota':
+            return 'Japan';
+	}
+}
+    this.toString=function() {
+        return this.manufacturer+" "+this.model+" "+this.year;
+	}
+
+
+}
+    var bmw = new Car("BMW", "X5", 2010),
+    audi = new Car("Audi", "Q5", 2012),
+    toyota = new Car("Toyota", "Camry");
+// @TODO: если конструктор вызывается без указания текущего года, то подставлять текущий
+// @TODO: реализовать методы вывода информации о машине:
+ console.log('Car: ' + bmw); // Car: BMW X5 2010
+ console.log(bmw.getInfo()); // BMW X5 2010
+ console.log(bmw.getDetailedInfo()); // Производитель: BMW. Модель: X5. Год: 2010
+
+
+
+
+
+
+
+
+
+/**
+ * Создает экземпляр Автосалона
+ * @this {CarDealer}
+ * @param {string} name Название автосалона
+ */
+
+function CarDealer(name) {
+    this.name = name;
+    this.cars = [];
+    this.prices={};
+    this.setPrice=function(car,price){
+	for(var i=0;i&lt;this.cars.length;i++)
+		if(this.cars[i].getInfo()==car){}
+	}
+
+
+    this.add=function(){
+	    for(var i=0;i&lt;arguments.length;i++) {
+	        if(arguments[i] instanceof Car)
+			this.cars.push(arguments[i])
+		else console.log('Объект должен быть класса Car')
+
+	    }
+            return this;
+    }
+
+
+    this.setPrice=function(car, price){
+	var formatPrice = /^([€,¥])(\d*)$/;
+	var formatCar=/^([^\b]+)\b([^\b]+)\b(\d+)$/;
+	if(formatPrice.test(price)&&formatCar.test(car)){
+		var priceArray = formatPrice.exec(price);
+
+		this.prices[car]={value:priceArray[2] , currency: priceArray[1]};
+	}
+	else
+		console.log('format error')
+
+
+	return this;
+    }
+    this.getPrice=function(car){
+        return this.prices[car.toString()]?this.prices[car.toString()] : {value:undefined , currency: undefined};;
+    }
+
+    this.list=function(){
+	    return this.cars.join(', ');
+	}
+    this.listByCountry=function(country){
+        var sortList=[];
+        for(var i=0;i&lt;this.cars.length;i++) {
+                if(this.cars[i].getCountry()==country)
+                sortList.push(this.cars[i])
+            }
+        return sortList.join(', ');
+	}
+
+    this.listRubPrice=function(country){
+        var sortList=[];
+        for(var i=0;i&lt;this.cars.length;i++) {
+                var PriceRub=currencyConverter(this.getPrice(this.cars[i]));
+                var printPriceRub=PriceRub?": Цена "+PriceRub+'Р': ': Модель отсутствует в прайсе';
+                sortList.push(this.cars[i]+" "+printPriceRub);
+        }
+        return sortList.join(', ');
+    }
+
+
+}
+
+function  currencyConverter(price){//достаточно универсальная функция должна быть доступна в глобальной области видимости
+    switch (price.currency) {
+        case '€':
+            return price.value*40;
+
+        case '¥':
+            return price.value*30;
+        default : return undefined;
+    }
+}
+
+
+
+
+
+
+var yandex = new CarDealer('Яндекс.Авто');
+
+
+// @TODO: реализовать метод добавления машин в автосалон. Предусмотреть возможность добавления одной машины, нескольких машин.
+yandex
+    .add(toyota)
+    .add(bmw, audi);
+
+// @TODO: реализовать метод установки цены на машину
+/**
+ * Установить цену на машину
+ * @param {string} car идентификатор машины
+ * @param {string} price стоимость
+ */
+// идентификатор машины составляется следующим образом "производитель модель год"
+// стоимость машины может быть задана в двух валютах: йена и евро.
+yandex
+   .setPrice('BMW X5 2010', '€2000')
+   .setPrice('Audi Q5 2012', '€3000')
+   .setPrice('Toyota Camry 2012', '¥3000');
+
+// @TODO: реализовать вывод списка автомобилей в продаже, с фильтрацией по стране производителю, используя метод getCountry:
+
+console.log(yandex.list()); //BMW X5 2010, Audi Q5 2012, Toyota Camry 2012
+console.log(yandex.listByCountry('Germany')); //BMW X5 2010, Audi Q5 2012
+
+// @TODO: бонус! выводить список машин с ценой в рублях.
+
+ console.log(yandex.listRubPrice());
+                                       </pre>
+                                  </p>
+                              </div>
+                                <h3>
+                                    <a href="#">
+                                        Вопрос №4
+                                    </a>
+                                </h3>
+                                <div>
+                                    <p>
+                                        <h4>
+                                            Найдите все текстовые файлы (*.txt), в имени которых содержится «yandex», а в содержимом — «школа разработки интерфейсов».
+                                        </h4>
+                                    </p>
+                                   <p>
+                                       <pre>
+find ./ -type f -name "*школа яндекса*.txt" -exec grep -i -H "main"  {} \;
+
+find ./ -type f -name "*школа яндекса*.txt" | xargs  grep -i -H "main";
+                                       </pre>
+                                   </p>
+                                </div>
+                                <h3>
+                                    <a href="#">
+                                        Вопрос №5
+                                    </a>
+                                </h3>
+                                <div>
+                                    <p>
+                                        <h4>
+                                            Дана программа, реализованная одновременно на Bash, Python и Perl. Программа принимает произвольное количество аргументов и печатает их количество. Нужно добавить опцию -v для verbose-режима, в котором дополнительно выводится значение каждого из аргументов.
+                                        </h4>
+                                    </p>
+                                    <p>
+                                        <pre>
+Bash
+
+#!/usr/bin/env bash
+
+usage() {
+cat << EOF
+Usage: printargs.sh [OPTIONS] [ARGUMENTS]
+  Print the number of arguments.
+
+OPTIONS:
+  -h      print help message
+  -m MSG  custom message
+
+Examples:
+  printargs.sh a b c
+  printargs.sh -m 'Arguments count: ' a b c
+  printargs.sh -h
+
+EOF
+}
+
+while getopts “hvm:” OPTION # TODO: add '-v' option for verbose mode
+do
+    case $OPTION in
+        h)
+            usage
+            exit 1
+            shift;;
+        m)
+            MESSAGE=$OPTARG
+            shift;shift;;
+        v)
+            ISVERBOSE=1
+            shift;;
+    esac
+done
+
+COUNT=0
+
+for ARG in $@; do
+    # TODO: add '-v' option for verbose mode
+    # and print each argument
+    if [[ $ISVERBOSE == 1 ]]; then
+	   echo $ARG
+    fi
+    let COUNT+=1
+done
+
+if [[ "$MESSAGE" != "" ]]; then
+    echo $MESSAGE
+fi
+
+
+
+echo $COUNT
+
+                                        </pre>
+                                    </p>
+                                    <p>
+                                        <pre>
+ Python
+
+#!/usr/bin/env python
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Print the number of arguments.')
+parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
+parser.add_argument('-m', dest='message', default='', help='custom message')
+parser.add_argument('-v', dest='verbose', default='', help='verbose mode')
+# TODO: add '-v' option for verbose mode
+
+args = parser.parse_args()
+
+count = 0
+
+for a in args.arguments:
+	if args.verbose != ''
+		print(a)
+    # TODO: add '-v' option for verbose mode
+    # and print each argument
+    count += 1
+
+if args.message != '':
+    print(args.message)
+
+print(count)
+                                        </pre>
+                                    </p>
+                                    <p>
+                                        <pre>
+Perl
+
+#!/usr/bin/env perl
+
+use strict;
+use Getopt::Long;
+use Pod::Usage;
+
+my $help;
+my $message = '';
+my $verbose;
+
+@ARGV and GetOptions(
+    "h" => \$help,
+    "m:s" => \$message,
+	"v" => \$verbose
+    # TODO: add '-v' option for verbose mode
+) or pod2usage(1);
+pod2usage(-verbose => 2, -exitval => 2) if $help;
+
+my $count = 0;
+
+foreach $arg(@ARGV) {
+    # TODO: add '-v' option for verbose mode
+    # and print each argument
+	print($arg . "\n") if $verbose;
+    $count++;
+}
+
+if($message ne "") {
+    print($message . "\n");
+}
+
+print($count . "\n");
+
+__END__
+
+=head1 NAME
+
+    printargs.pl - Print the number of arguments.
+
+=head1 SYNOPSIS
+
+    printargs.pl [options] [arguments]
+
+=head1 OPTIONS
+    '-v' option for verbose mode
+
+    -h      Show help message.
+
+    -m MSG  Specify a custom message.
+
+
+=head1 EXAMPLE
+
+    printargs.sh a b c
+
+    printargs.sh -m 'Arguments count: ' a b c
+
+    printargs.sh -h
+
+                                        </pre>
+                                    </p>
+                                </div>
+                              <h3>
+                                  <a href="#">
+                                      Вопрос №6
+                                  </a>
+                              </h3>
+                              <div>
+                                  <p>
+                                  <h4>
+                                     Расскажите, в каком объёме и при каких обстоятельствах вы изучали следующие темы: языки программирования (императивные/декларативные, разные системы типов), структуры (классы, структуры данных, примитивные типы), парадигмы (события, ООП, параллельность/асинхронность, кеширование), алгоритмы (парсинг, сортировка, поиск), паттерны.
+                                 </h4>
+                                  </p>
+                                  <p>
+                                     Знакомствство с языками программирования началось в институте продолжается по нынешние момент.
+                                      Из императивных языков были  изучены С,С+(редкое использование если приходилось по учебе и немного по работе),Java(Активное использование по работе совместно с фреймворком JSF и NOSQL MongoDb),PHP(использование в связи с  cms на работе написанной на нем),
+                                      Javascript(активное использование совместно с фреймворками jquery,backbone,underscore),Ruby(изучение совместно с Rails),Lisp(в институтском курсе и немного на работе),SQL(активно),XSLT(в одном проекте)
+                                  </p>
+                                  <p>
+                                      Структуры были изучены во всех языках,перечисленных выше,содержащих данные структуры.
+                                  </p>
+                                  <p>
+                                      События были изучены в С++(взаимодействие с пользовательским интерфейсом),JAVA(взаимодействие с пользовательским интерфейсом/Comet сервлет),javascript
+                                      ООП (Java,C++,PHP). Так же изучены шаблоны программирования(Применял в PHP и Java).
+                                      Параллельность/асинхронность-java(Сервлет совмещенный с сервером сокетов).
+                                      Кеширование - cms на php на работе (серверное кеширование с учетом группы пользователя).
+                                  </p>
+                                  <p>
+                                     Алгоритмы парсинга(Институт + работа)
+                                     Сортировка (Институт + работа). Изучены алгоритмы сортировки с линейным - n log n временем сортировки.
+                                     Поиск(Институт).
+                                  </p>
+                              </div>
+                            </div>
+
+                        </div><!-- End demo -->
+
+
+                    </div>
+                    <div id='help' name="Помощь" class="section">
+                       <h2>О проекте</h2>
+                        <p>
+                           Данный проект представляет собой класический одностраничный сайт. При его написании были использованы javascript Фреймворки Backbone Undescore Jquery.
+                           Для упрощения процесса  верстки был использован стандартный шаблон страницы и twitter.bootstrap.css.
+
+                       </p>
+                        <p>
+                            Сайт поддерживает историю браузера,и может открываться на выбранной вкладке.
+                            Поддержка истории была включена с помощью Backbone.Router
+                            <pre>
+app.Routers.index = Backbone.Router.extend({
+
+    initialize: function(){
+        ...
+    },
+
+    routes: {
+        ":section":        "resume",
+        "": "resume"
+        },
+
+    resume: function(section) {
+        section= section?section:'general';
+        this.app.render(section)
+        return false;
+    }
+
+});
+                            </pre>
+                        </p>
+                        <p>
+                            При иницализации роутера инициализируется основной модуль приложения,это приложение принимает следующие параметры : apps,el.
+                            Apps - массив модулей и их параметров,необходимых для их инициализации. El - DOM-элемент,определяющий зону видимости приложения, именно внутрь этого элемента и будут прикрепляться вложенные модули.
+                            Каждый модуль имеет строго определенную зону видимости dom-элементов,все события будут отлавливаться только внутри нее.
+                            <pre>
+   initialize: function(){
+        this.app = new app.Views.mainApp({
+      apps:{
+                 leftMenu : {
+                                app: app.Views.leftMenu,
+                                elements: $('#sideLeft'),
+                                options:{}
+                            },
+                 accordion : {
+                                app: app.Views.accordionApp,//класс приложения
+                                elements: $('.accordion'), //селекторы по которым ищутся
+                                                           //аккордионы,и на основе которых они строятся
+                                 options:{ //параметры аккордиона
+                                            head : 'h3',
+                                             body : 'div'
+                                         }
+                               }
+            },
+            el:$('#middle').get(0)
+                                         });
+    }
+
+
+                            </pre>
+                        </p>
+                        <p>
+                            Основной модуль выполняет следующие действия:
+                         </p><p>
+                            1) Создает коллекцию sections, и на основе этой коллекции создает список приложений(sectionsApp),каждое такое приложение отвечает за конкретную секцию.
+<pre>
+        //инициализация коллекции
+    initCollection: function(){
+
+        var collection=this.collection=new this.collectionClass();
+
+        //определение параметров необходимых для построения по html элементам, элементов коллекции
+        //определение аттрибутов элементов коллекции (id,name)
+        var itemColl =this.itemCollection;
+        var selector=itemColl.selector?itemColl.selector:'div';
+        var attrs=itemColl.attrs?itemColl.attrs:['id'];
+
+        //добавление в коллекцию элементов c атрибутами определенными в attrs
+        var item;
+        this.$(selector).each(function(i){
+             item={}
+            _.each(attrs,function(val){
+                 item[val]=this.attr(val);
+            },$(this))
+            collection.add(item)
+        })
+    },
+     initList: function(item){// создает список приложений(sectionsApp)
+        var coll = this.collection;
+        if(!_.isEmpty(coll)&&!_.isEmpty(coll.models))
+            coll.each(function(num,i){
+                var view = new item({model: num, el :$('#'+num.id).get(0)});
+            },this);
+    }
+</pre>
+                            2) Создает все apps, передавая им ссылку на корневое приложение.
+                            <pre>
+    appsRender :function(){
+        _.each(this.apps,function(val,name){
+            var parentApp=this;
+            this.$(val.elements).each(function(i){
+                if(_.isUndefined(parentApp['apps_'+name]))
+                    parentApp['apps_'+name]=[];
+                parentApp['apps_'+name][i]=new val.app(_.extend(val.options,{parentApp:parentApp,el:this}));
+            })
+        },this)
+    }
+                            </pre>
+                            3) Передает дочерним приложениям события от роутера
+                            <pre>
+      toggle: function (current,next){
+        var coll=this.collection;
+        if(!_.isEmpty(current)){
+            coll.get(current).trigger('close');
+        }
+           coll.get(next).trigger('open');
+    }
+                            </pre>
+                        </p>
+                       <p>
+                           Описание остальных app не привожу в силу их простоты.
+                       </p>
+
+
+                    </div>
+            </div><!-- #content-->
+		</div><!-- #container-->
+
+		<div class="sideBar">
+            <ul class="nav nav-tabs nav-stacked">
+                <li><a href="#general">Общие вопросы</a></li>
+                <li><a href="#experience">Опыт разработки</a></li>
+                <li><a href="#technical">Технические вопросы</a></li>
+                <li><a href="#help">О проекте</a></li>
+            </ul>
+		</div><!-- .sidebar#sideLeft -->
+
+	</div><!-- #middle-->
+
+
+
+</div><!-- #wrapper -->
+<div id="footer">
+    <div>© 2012 Воробьев Никита, по всем вопросам пишите по адресу voronsupermen@gmail.com</div>
+</div>
+</body>
+</html>
