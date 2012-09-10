@@ -13,6 +13,14 @@ var app={
 
         }
 $(document).ready(function(){
-    new app.Routers.index();
-    Backbone.history.start()
+    document.JST=[];
+    $('#template').load('template/todo.html','',function(){
+                    $("div[type='text/template']",'#template').each(function(){
+                        document.JST[this.id]= _.template($(this).html())
+                    })
+
+
+        new app.Routers.index();
+        Backbone.history.start()
+    })
 });

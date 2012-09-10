@@ -1,6 +1,6 @@
 clientManager = new function() {
     this.clients = []
-
+    this.list = []
     this.registerClient = function(client) {
 	  console.log('клиент'+this.clients.length);
         this.clients.push(client)
@@ -9,7 +9,7 @@ clientManager = new function() {
 
     }
 
-    this.broadcastMessage = function(message) {
+    this.broadcastMessage = function(message,user) {
         console.log('событие'+this.clients.length);
         for(var i=0; i<this.clients.length; i++) {
             var client = this.clients[i]
@@ -20,13 +20,22 @@ clientManager = new function() {
         }
         this.clients = []
     }
+    this.list = function(req,res) {
+            res.json(this.list,200);
+    }
 }
+
 exports.registerClient= function(client){
     clientManager.registerClient(client);
 }
-exports.broadcastMessage= function(message){
+
+exports.list= function(req,res){
+    clientManager.list(req,res);
+}
+
+exports.broadcastMessage= function(message,user){
     console.log('готов');
-    clientManager.broadcastMessage(message);
+    clientManager.broadcastMessage(message,user);
     console.log('отдал');
 }
 
