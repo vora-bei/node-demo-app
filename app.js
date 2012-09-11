@@ -8,6 +8,7 @@ var express = require('express')
   , comet = require('./comet/comet')
   , user = require('./routes/user')
   , http = require('http')
+  , models = require('./models')
   , path = require('path');
 
 var app = express();
@@ -34,7 +35,7 @@ app.configure('development', function(){
 //Ограничение по урлам
 function loadUser(req, res, next) {
     if (req.session.user_id) {
-        User.findById(req.session.user_id, function(user) {
+        (new User).findById(req.session.user_id, function(user) {
             if (user) {
                 req.currentUser = user;
                 next();
@@ -59,7 +60,7 @@ app.get('/500', function(req, res) {
 app.get('/bad', function(req, res) {
     unknownMethod();
 });
-
+/*
 function authenticateFromLoginToken(req, res, next) {
     var cookie = JSON.parse(req.cookies.logintoken);
 
@@ -86,7 +87,7 @@ function authenticateFromLoginToken(req, res, next) {
             }
         });
     }));
-}
+}*/
 // Users
 app.get('/users/new', function(req, res) {
     res.render('users/new.jade', {
@@ -116,8 +117,9 @@ user.save(function(err) {
 
         default:
             req.session.user_id = user.id;
-            res.redirect('/documents');
+            res.redirect('/');
     }
+ });
 });
 
 // Сессии
@@ -127,31 +129,29 @@ app.get('/sessions/new', function(req, res) {
     });
 });
 
-app.post('/sessions', function(req, res) {
-    // Найти пользователя и выставить currentUser
-});
 
-app.post('/sessions', function(req, res) {
-    User.findOne({ email: req.body.user.email }, function(err, user) {
-        if (user && user.authenticate(req.body.user.password)) {
-            req.session.user_id = user.id;
 
-            // Remember me
-            if (req.body.remember_me) {
-                var loginToken = new LoginToken({ email: user.email });
-                loginToken.save(function() {
-                    res.cookie('logintoken', loginToken.cookieValue, { expires: new Date(Date.now() + 2 * 604800000), path: '/' });
-                    res.redirect('/documents');
-                });
+    app.post('/sessions', function(req, res) {
+        User.findOne({ email: req.body.user.email }, function(err, user) {
+            if (user && user.authenticate(req.body.user.password)) {
+                req.session.user_id = user.id;
+
+                // Remember me
+                if (req.body.remember_me) {
+                    var loginToken = new LoginToken({ email: user.email });
+                    loginToken.save(function() {
+                        res.cookie('logintoken', loginToken.cookieValue, { expires: new Date(Date.now() + 2 * 604800000), path: '/' });
+                        res.redirect('/');
+                    });
+                } else {
+                    res.redirect('/');
+                }
             } else {
-                res.redirect('/documents');
+                req.flash('error', 'Incorrect credentials');
+                res.redirect('/sessions/new');
             }
-        } else {
-            req.flash('error', 'Incorrect credentials');
-            res.redirect('/sessions/new');
-        }
+        });
     });
-});
 
 app.del('/sessions', loadUser, function(req, res) {
     if (req.session) {
@@ -167,7 +167,7 @@ app.del('/sessions', loadUser, function(req, res) {
 
 
 
-app.get('/', routes.index);
+app.get('/',loadUser, routes.index);
 
 app.get('/comet/subscribe', function(req,res){
     comet.registerClient(res);
