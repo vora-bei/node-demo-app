@@ -8,7 +8,7 @@ var express = require('express')
   , comet = require('./comet/comet')
   , user = require('./routes/user')
   , http = require('http')
-  , models = require('./models')
+  , User = require('./model')
   , path = require('path');
 
 var app = express();
@@ -20,8 +20,8 @@ app.configure(function(){
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
-  app.use(express.cookieDecoder());
-  app.use(express.session());
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: "keyboard cat" }));
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
@@ -35,7 +35,7 @@ app.configure('development', function(){
 //Ограничение по урлам
 function loadUser(req, res, next) {
     if (req.session.user_id) {
-        (new User).findById(req.session.user_id, function(user) {
+        User.findById(req.session.user_id, function(user) {
             if (user) {
                 req.currentUser = user;
                 next();
