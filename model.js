@@ -6,20 +6,30 @@
  * To change this template use File | Settings | File Templates.
  */
 
+var users={
+    1:{email:'vora-bei@mail.ru',hashed_password: 'ewewe', salt: 'lol'},
+    2:{email:'vora-bei@mail.ru',hashed_password: 'ewewe', salt: 'lol'}
+};
 
-
-exports.User = function(email,hashed_password,salt){
+exports.index = function(email,hashed_password,salt){
     this.email=email;
     this.hashed_password=hashed_password;
     this.salt=salt;
-   this.users={
-     1:{email:'vora-bei@mail.ru',hashed_password: 'ewewe', salt: 'lol'},
-     2:{email:'vora-bei@mail.ru',hashed_password: 'ewewe', salt: 'lol'}
-   };
 
-   this.findById=function(id, call){
-       call.apply(this,this.users[id])
-   };
+
 
 };
 
+
+exports.findById=function(id, call){
+    call.apply(this,[this,this.users[id]])
+};
+
+exports.findOne=function(email,call){
+    var flag=false;
+    users.forEach(function(){
+        if(this.email==email)
+            flag=true;
+    })
+    flag&&call.apply(this,['',this,this.users[id]]);
+};

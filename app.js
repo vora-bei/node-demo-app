@@ -17,6 +17,7 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
+  //app.set('view options', { layout: false });
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -90,19 +91,17 @@ function authenticateFromLoginToken(req, res, next) {
 }*/
 // Users
 app.get('/users/new', function(req, res) {
-    res.render('users/new.jade', {
-        locals: { user: new User() }
-    });
+    res.render('users/new.jade',
+        { user: new User.index() }
+    );
 });
 
 app.post('/users.:format?', function(req, res) {
-    var user = new User(req.body.user);
+    var user = new User.index(req.body.user);
 
     function userSaveFailed() {
         req.flash('error', 'Account creation failed');
-        res.render('users/new.jade', {
-            locals: { user: user }
-        });
+        res.render('users/new.jade', { user: user });
     }
 user.save(function(err) {
     if (err) return userSaveFailed();
@@ -124,9 +123,9 @@ user.save(function(err) {
 
 // Сессии
 app.get('/sessions/new', function(req, res) {
-    res.render('sessions/new', {
-        locals: { user: new User() }
-    });
+    res.render('sessions/new.jade',
+        {user: new User.index() }
+    );
 });
 
 

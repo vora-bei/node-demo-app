@@ -3,7 +3,7 @@
   p
     a.button(href='/users/new') Create an account &rarr;
   form.users#login(method='post', action='/sessions')
-    !=partial('../users/fields', { locals: { user: user } })
+    include ../users/fields.jade
     div
       input(type='submit', value='Log In')
 
