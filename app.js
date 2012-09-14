@@ -14,7 +14,7 @@ var express = require('express')
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 4000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   //app.set('view options', { layout: false });
@@ -35,9 +35,11 @@ app.configure('development', function(){
 
 //Ограничение по урлам
 function loadUser(req, res, next) {
+    console.log('loadUser');
     if (req.session.user_id) {
         User.findById(req.session.user_id, function(user) {
             if (user) {
+                console.log('ДА');
                 req.currentUser = user;
                 next();
             } else {
@@ -131,10 +133,11 @@ app.get('/sessions/new', function(req, res) {
 
 
     app.post('/sessions', function(req, res) {
-        User.findOne({ email: req.body.user.email }, function(err, user) {
+        console.log('сессии');
+        User.findOne(req.body.user.email, function(err, user) {
             if (user && user.authenticate(req.body.user.password)) {
                 req.session.user_id = user.id;
-
+                console.log('аутификация');
                 // Remember me
                 if (req.body.remember_me) {
                     var loginToken = new LoginToken({ email: user.email });
@@ -143,6 +146,7 @@ app.get('/sessions/new', function(req, res) {
                         res.redirect('/');
                     });
                 } else {
+                    console.log('до редиректа');
                     res.redirect('/');
                 }
             } else {
@@ -154,8 +158,8 @@ app.get('/sessions/new', function(req, res) {
 
 app.del('/sessions', loadUser, function(req, res) {
     if (req.session) {
-        LoginToken.remove({ email: req.currentUser.email }, function() {});
-        res.clearCookie('logintoken');
+        //LoginToken.remove({ email: req.currentUser.email }, function() {});
+        //res.clearCookie('logintoken');
         req.session.destroy(function() {});
     }
     res.redirect('/sessions/new');
