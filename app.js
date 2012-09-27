@@ -9,7 +9,8 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , User = require('./model')
-  , path = require('path');
+  , path = require('path'),
+    flash = require('connect-flash');;
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.cookieParser());
+  app.use(flash());
   app.use(express.session({ secret: "keyboard cat" }));
   app.use(express.methodOverride());
   app.use(app.router);
@@ -94,7 +96,7 @@ function authenticateFromLoginToken(req, res, next) {
 // Users
 app.get('/users/new', function(req, res) {
     res.render('users/new.jade',
-        { user: new User.index() }
+        { user: new User.index(),error : req.flash('error'),info : req.flash('info') }
     );
 });
 
@@ -126,7 +128,7 @@ user.save(function(err) {
 // Сессии
 app.get('/sessions/new', function(req, res) {
     res.render('sessions/new.jade',
-        {user: new User.index() }
+        {user: new User.index(), error : req.flash('error') }
     );
 });
 
@@ -176,10 +178,10 @@ app.get('/comet/subscribe', function(req,res){
     comet.registerClient(res);
 });
 
-app.get('/comet/send/:user', function(req,res){
-    comet.broadcastMessage(req.param['message'],req['user']);
+app.get('/comet/send/',loadUser, function(req,res){
+    comet.broadcastMessage(req.param['message'],req.currentUser);
     res.json({
-        user: 'tj'
+        send : 'ok'
     },200);
     
 });

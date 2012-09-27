@@ -4,6 +4,7 @@
     a.button(href='/users/new') Create an account &rarr;
   form.users#login(method='post', action='/sessions')
     include ../users/fields.jade
+    = error
     div
       input(type='submit', value='Log In')
 

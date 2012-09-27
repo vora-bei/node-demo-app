@@ -11,11 +11,13 @@ clientManager = new function() {
 
     this.broadcastMessage = function(message,user) {
         console.log('событие'+this.clients.length);
-        for(var i=0; i<this.clients.length; i++) {
+        for(var i=0; i<this.clients.length; i++){
             var client = this.clients[i]
             console.log('отдаю');
+            this.list.push({ message: message, id: user.id})
             client.json({
-                message: message
+                message: message,
+                id: user.id
             });
         }
         this.clients = []
