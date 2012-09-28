@@ -186,11 +186,7 @@ app.get('/comet/send/',loadUser, function(req,res){
     
 });
 app.get('/comet/list', function(req,res){
-    comet.list(req,res);
-    res.json({
-        user: 'tj'
-    },200);
-
+    res.json(comet.list(req,res),200);
 });
 app.get('/users', user.list);
 

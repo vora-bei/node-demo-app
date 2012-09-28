@@ -10,11 +10,12 @@ clientManager = new function() {
     }
 
     this.broadcastMessage = function(message,user) {
-        console.log('событие'+this.clients.length);
+        console.log('событие'+this.list.length);
+        this.list.push({ message: message, id: user.id})
         for(var i=0; i<this.clients.length; i++){
             var client = this.clients[i]
             console.log('отдаю');
-            this.list.push({ message: message, id: user.id})
+
             client.json({
                 message: message,
                 id: user.id
@@ -22,8 +23,8 @@ clientManager = new function() {
         }
         this.clients = []
     }
-    this.list = function(req,res) {
-            res.json(this.list,200);
+    this.getList = function(req,res) {
+          return  this.list;
     }
 }
 
@@ -32,7 +33,7 @@ exports.registerClient= function(client){
 }
 
 exports.list= function(req,res){
-    clientManager.list(req,res);
+    return clientManager.getList(req,res);
 }
 
 exports.broadcastMessage= function(message,user){
