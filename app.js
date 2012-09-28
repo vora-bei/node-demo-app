@@ -19,10 +19,11 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   //app.set('view options', { layout: false });
+  app.use(express.bodyParser());
+    app.use(express.cookieParser());
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
-  app.use(express.cookieParser());
+
   app.use(flash());
   app.use(express.session({ secret: "keyboard cat" }));
   app.use(express.methodOverride());
@@ -179,10 +180,14 @@ app.get('/comet/subscribe', function(req,res){
 });
 
 app.get('/comet/send/',loadUser, function(req,res){
-    comet.broadcastMessage(req.param['message'],req.currentUser);
-    res.json({
-        send : 'ok'
-    },200);
+    comet.broadcastMessage(req.params['message'],req.currentUser);
+    console.log(req.params['message'])
+    var a={
+        'message' : req.params['message'],
+        id: 1+1,
+        name: 'lol'
+    }
+    res.json(a,200);
     
 });
 app.get('/comet/list', function(req,res){

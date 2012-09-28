@@ -16,10 +16,7 @@ clientManager = new function() {
             var client = this.clients[i]
             console.log('отдаю');
 
-            client.json({
-                message: message,
-                id: user.id
-            });
+            client.json({ message: message, id: user.id});
         }
         this.clients = []
     }
