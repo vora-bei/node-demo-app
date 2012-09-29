@@ -20,7 +20,7 @@ app.configure(function(){
   app.set('view engine', 'ejs');
   //app.set('view options', { layout: false });
   app.use(express.bodyParser());
-    app.use(express.cookieParser());
+  app.use(express.cookieParser());
   app.use(express.favicon());
   app.use(express.logger('dev'));
 
@@ -182,11 +182,7 @@ app.get('/comet/subscribe', function(req,res){
 app.get('/comet/send/',loadUser, function(req,res){
     comet.broadcastMessage(req.param('message'),req.currentUser);
     console.log(req.param('message'))
-    var a={
-        'message' : req.currentUser.email,
-        id: 1+1,
-        name: 'lol'
-    }
+    var a="ok";
     res.json(a,200);
     
 });
