@@ -28,7 +28,7 @@ var users=[
             new exports.index('vora-bei@mail.ru','ewewe','lol',1)
           ]
 exports.findById=function(id, call){
-    call.apply(this,[this,users[id]])
+    call.apply(this,[users[id]])
 };
 
 exports.findOne=function(email,call){

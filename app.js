@@ -180,10 +180,10 @@ app.get('/comet/subscribe', function(req,res){
 });
 
 app.get('/comet/send/',loadUser, function(req,res){
-    comet.broadcastMessage(req.params['message'],req.currentUser);
-    console.log(req.params['message'])
+    comet.broadcastMessage(req.param('message'),req.currentUser);
+    console.log(req.param('message'))
     var a={
-        'message' : req.params['message'],
+        'message' : req.currentUser.email,
         id: 1+1,
         name: 'lol'
     }
